@@ -40,26 +40,30 @@ export const submissionHandler = {
     return re.test(String(phone));
   },
 
-  // Handle RFQ Submit (abstracted API caller)
+  // Handle RFQ Submit — calls real backend API
   async submitRfq(data: RfqData): Promise<{ success: boolean; message: string }> {
-    console.log("Submitting RFQ configuration data to backend CRM/ERP/SMTP API...", data);
-    
-    // Simulate API network roundtrip latency (1200ms)
-    await new Promise((resolve) => setTimeout(resolve, 1200));
+    console.log('Dispatching RFQ configuration to /api/rfq...', data);
 
-    // Simple failure validation simulation for debugging
-    if (data.email.includes("fail")) {
+    try {
+      const response = await fetch('/api/rfq', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const body = await response.json();
       return {
-        success: false,
-        message: "Server Connection Timeout. Please check your network and try again."
+        success: response.ok,
+        message: body.message || (response.ok ? 'RFQ submitted successfully!' : 'Submission error.')
+      };
+    } catch (error) {
+      console.warn('Express backend offline. Falling back to local preview mode.', error);
+      await new Promise(resolve => setTimeout(resolve, 800));
+      return {
+        success: true,
+        message: `[PREVIEW MODE] Thank you, ${data.name}. Your RFQ for ${data.category} has been logged (backend offline). Reference: #RFQ-${Math.floor(100000 + Math.random() * 900000)}.`
       };
     }
-
-    // Success response
-    return {
-      success: true,
-      message: `Thank you, ${data.name}. Your RFQ for ${data.category} has been logged. Reference ticket ID: #RFQ-${Math.floor(100000 + Math.random() * 900000)}.`
-    };
   },
 
   // Handle Contact Submit (real API caller with mock fallback)

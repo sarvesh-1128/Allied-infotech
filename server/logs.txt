@@ -24,3 +24,23 @@
 [2026-07-03T09:24:06.515Z] [INFO] Contact form email successfully dispatched | Meta: {"messageId":"mock-message-id-91572"}
 [2026-07-03T09:40:35.757Z] [WARN] SMTP Credentials missing or incomplete. Email routing will operate in Simulated local logs mode.
 [2026-07-03T09:40:35.767Z] [INFO] Corporate Express server started successfully. Listening on port: 3000
+[2026-07-03T10:01:32.455Z] [WARN] SMTP Credentials missing or incomplete. Email routing will operate in Simulated local logs mode.
+[2026-07-03T10:01:32.462Z] [INFO] Corporate Express server started successfully. Listening on port: 3000
+[2026-07-03T10:30:21.363Z] [INFO] Received request: POST /api/contact from IP: ::1
+[2026-07-03T10:30:21.376Z] [INFO] Running request validation checks on incoming post payload
+[2026-07-03T10:30:21.418Z] [INFO] Formatting and sending contact email for: test (test)
+[2026-07-03T10:30:21.419Z] [INFO] [SIMULATION LOG] Email Dispatched to local console (SMTP Server offline):
+      -----------------------------------------
+      From: "Allied Web Desk" <enquiries@allied-iconic.com>
+      To: info@allied-iconic.com
+      Subject: [Web Enquiry] technical - test
+      -----------------------------------------
+[2026-07-03T10:30:21.934Z] [INFO] Contact form email successfully dispatched | Meta: {"messageId":"mock-message-id-669407"}
+[2026-07-03T11:03:45.762Z] [INFO] Corporate Express server started successfully. Listening on port: 3000
+[2026-07-03T11:03:48.375Z] [INFO] SMTP ready: smtp.gmail.com:587 — authenticated as sxrvxsh07@gmail.com
+[2026-07-03T11:06:02.868Z] [INFO] Received request: POST /api/contact from IP: ::1
+[2026-07-03T11:06:02.871Z] [INFO] Running request validation checks on incoming post payload
+[2026-07-03T11:06:02.908Z] [INFO] Contact form submission: Test_mail <sarvesh.2024@vitstudent.ac.in>
+[2026-07-03T11:06:02.909Z] [INFO] Dispatching email → To: sxrvxsh07@gmail.com | Subject: "[Web Enquiry] test — Test_mail"
+[2026-07-03T11:06:08.510Z] [INFO] Contact email dispatched successfully.
+[2026-07-03T11:06:08.510Z] [INFO] Email delivered. Message ID: <2434e34a-5f1f-cc71-16e7-d45e6163ac72@gmail.com>

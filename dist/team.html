@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>document.documentElement.className += ' js-active';</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team | Allied-Iconic Pvt. Ltd. & Allied Infotech</title>
+  <meta name="description" content="Meet the leadership and core team behind Allied-Iconic Pvt. Ltd. and Allied Infotech — engineering professionals driving innovation in manufacturing, moulding, and IT solutions." />
+
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" />
+
+  <!-- Structured data for team page -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://allied-iconic.com/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Our Team",
+        "item": "https://allied-iconic.com/team.html"
+      }]
+    }
+  </script>
+
+  <style>
+    /* ─── Team Page Specific Styles ─────────────────────────────────── */
+    .team-hero-bg {
+      background: linear-gradient(135deg, #0B1329 0%, #0F2055 60%, #0B1F4A 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .team-hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 80% 40%, rgba(0,89,179,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Department filter tabs */
+    .dept-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: var(--spacing-xxl);
+    }
+    .dept-tab {
+      padding: 7px 20px;
+      border-radius: 100px;
+      border: 1.5px solid var(--color-border);
+      background: var(--color-bg-main);
+      color: var(--color-text-muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      font-family: var(--font-family);
+    }
+    .dept-tab:hover,
+    .dept-tab.active {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: white;
+    }
+
+    /* Team grid */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--spacing-xl);
+    }
+
+    /* Team card */
+    .team-card {
+      background: var(--color-bg-main);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition-medium), box-shadow var(--transition-medium), border-color var(--transition-fast);
+      position: relative;
+    }
+    .team-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0, 89, 179, 0.14);
+      border-color: var(--color-primary);
+    }
+
+    /* Photo area */
+    .team-card-photo {
+      width: 100%;
+      aspect-ratio: 3 / 3.4;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      background: #E8EEF5;
+    }
+    .team-card-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 3 / 3.4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0F2055 0%, #1a3a7a 100%);
+      font-size: 4rem;
+      color: rgba(255,255,255,0.3);
+      user-select: none;
+    }
+
+    /* Accent bar at top */
+    .team-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-primary), #3B82F6);
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+      z-index: 2;
+    }
+    .team-card:hover::before {
+      opacity: 1;
+    }
+
+    .team-card-body {
+      padding: var(--spacing-lg);
+    }
+    .team-card-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-secondary);
+      margin-bottom: 2px;
+    }
+    .team-card-role {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: var(--spacing-sm);
+    }
+    .team-card-dept {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 100px;
+      background: rgba(0, 89, 179, 0.08);
+      color: var(--color-primary);
+      border: 1px solid rgba(0, 89, 179, 0.2);
+      margin-bottom: var(--spacing-md);
+    }
+    .team-card-bio {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      margin-bottom: var(--spacing-md);
+    }
+    .team-card-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .team-skill-tag {
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--color-bg-alt);
+      color: var(--color-text-muted);
+      border: 1px solid var(--color-border);
+    }
+
+    /* Leadership banner */
+    .leadership-banner {
+      background: linear-gradient(135deg, #0059B3 0%, #003E80 100%);
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xxl);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: var(--spacing-xxl);
+    }
+    .leadership-banner::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+
+    /* Values section */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: var(--spacing-lg);
+    }
+    .value-card {
+      text-align: center;
+      padding: var(--spacing-xl) var(--spacing-lg);
+    }
+    .value-icon {
+      font-size: 2.4rem;
+      margin-bottom: var(--spacing-md);
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      .team-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .team-card-photo,
+      .team-card-photo-placeholder {
+        aspect-ratio: 1;
+      }
+    }
+    @media (max-width: 440px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/team-RhLZny45.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-Bshph1IG.js">
+  <link rel="modulepreload" crossorigin href="/assets/echarts-DT9wy0AU.js">
+  <link rel="modulepreload" crossorigin href="/assets/main-B7Jnpmzn.js">
+  <link rel="stylesheet" crossorigin href="/assets/main-CSdAuNRM.css">
+</head>
+<body>
+
+  <!-- Dynamic Header injection target -->
+  <header></header>
+
+  <!-- Hero Section -->
+  <section class="page-hero team-hero-bg" style="color: white; padding: 90px 0 70px;">
+    <div class="container page-hero-container" style="position: relative; z-index: 1;">
+      <span class="badge badge-primary" style="margin-bottom: var(--spacing-sm);">People Behind the Products</span>
+      <h1 style="font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: var(--spacing-md);">Our Team</h1>
+      <p style="font-size: 1.1rem; color: #94a3b8; max-width: 680px; line-height: 1.7;">
+        A dedicated group of engineers, technicians, and business professionals working together to deliver precision manufacturing solutions, moulding technologies, and IT services across India and internationally.
+      </p>
+    </div>
+  </section>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <div class="container">
+      <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumbs-item breadcrumbs-item-active">Our Team</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Leadership Banner -->
+  <section class="section-padding container">
+    <div class="leadership-banner reveal">
+      <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: var(--spacing-sm);">Driven by Expertise. Committed to Excellence.</h2>
+      <p style="font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 700px; margin: 0 auto; line-height: 1.7;">
+        Our multidisciplinary team combines decades of hands-on experience in injection moulding, hydraulic engineering, industrial IT, and international trade to serve global manufacturing clients with confidence and precision.
+      </p>
+    </div>
+  </section>
+
+  <!-- Team Grid Section -->
+  <section id="team-grid-section" class="section-padding bg-alt">
+    <div class="container">
+      <!-- Section header -->
+      <div style="text-align: center; max-width: 700px; margin: 0 auto var(--spacing-xl);">
+        <h2 style="font-size: 2rem; font-weight: 800; color: var(--color-secondary); margin-bottom: var(--spacing-xs);">Meet the Team</h2>
+        <p style="color: var(--color-text-muted);">
+          Filter by department to explore the professionals behind Allied-Iconic's engineering, manufacturing, and technology divisions.
+        </p>
+      </div>
+
+      <!-- Department filter tabs -->
+      <div class="dept-tabs" id="dept-filter-bar">
+        <button class="dept-tab active" data-dept="all">All</button>
+        <button class="dept-tab" data-dept="leadership">Leadership</button>
+        <button class="dept-tab" data-dept="engineering">Engineering</button>
+        <button class="dept-tab" data-dept="manufacturing">Manufacturing</button>
+        <button class="dept-tab" data-dept="it">IT / ITES</button>
+        <button class="dept-tab" data-dept="sales">Sales & Business</button>
+      </div>
+
+      <!-- Rendered team member cards -->
+      <div class="team-grid" id="team-grid"></div>
+    </div>
+  </section>
+
+  <!-- Company Values Section -->
+  <section class="section-padding container">
+    <div style="text-align: center; max-width: 650px; margin: 0 auto var(--spacing-xxl);">
+      <h2 style="font-size: 2rem; font-weight: 800; color: var(--color-secondary); margin-bottom: var(--spacing-xs);">What Drives Us</h2>
+      <p style="color: var(--color-text-muted);">Our team is unified by a shared commitment to these core values in every project we undertake.</p>
+    </div>
+
+    <div class="values-grid">
+      <div class="card value-card reveal">
+        <span class="value-icon">🎯</span>
+        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--color-secondary); margin-bottom: 6px;">Precision First</h3>
+        <p style="font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.6;">Engineering accuracy built into every product specification, from hydraulic clamp tolerances to mould surface finishes.</p>
+      </div>
+      <div class="card value-card reveal">
+        <span class="value-icon">🤝</span>
+        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--color-secondary); margin-bottom: 6px;">Partnership Culture</h3>
+        <p style="font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.6;">We act as long-term partners to our clients — not just product vendors — providing post-installation support and technical guidance.</p>
+      </div>
+      <div class="card value-card reveal">
+        <span class="value-icon">🔄</span>
+        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--color-secondary); margin-bottom: 6px;">Continuous Improvement</h3>
+        <p style="font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.6;">Every team member is encouraged to innovate, share expertise, and evolve their technical and management skills.</p>
+      </div>
+      <div class="card value-card reveal">
+        <span class="value-icon">🌏</span>
+        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--color-secondary); margin-bottom: 6px;">Global Standards</h3>
+        <p style="font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.6;">Our partnerships with Chinese, Taiwanese, and South-East Asian OEMs bring international engineering standards to every local project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA: Join Our Team -->
+  <section class="section-padding bg-alt">
+    <div class="container" style="text-align: center;">
+      <h2 style="font-size: 2rem; font-weight: 800; color: var(--color-secondary); margin-bottom: var(--spacing-sm);">Join the Allied-Iconic Family</h2>
+      <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto var(--spacing-xl);">
+        We're always looking for talented engineers, technicians, and business development professionals who share our passion for precision and innovation.
+      </p>
+      <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
+        <a href="rfq.html#contact" class="btn btn-primary" style="padding: 12px 28px;">Send Your CV</a>
+        <a href="rfq.html#contact" class="btn btn-outline" style="padding: 12px 28px;">General Enquiry</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Footer injection target -->
+  <footer></footer>
+
+  <!-- Main script bundle (handles header, footer, scroll reveals etc.) -->
+
+  <!-- Team page logic (inline) -->
+
+</body>
+</html>

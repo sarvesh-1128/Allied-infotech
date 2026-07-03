@@ -1,5 +1,6 @@
 // Dynamic Reusable Product Detail Modal Component
 import { Product } from '../data/db.ts';
+import { downloadAsBlob, deriveFilename } from '../utils/download.ts';
 
 export class ProductModal {
   private overlay: HTMLElement | null = null;
@@ -117,9 +118,9 @@ export class ProductModal {
           </div>
           
           <div style="margin-top: var(--spacing-lg); text-align: center;">
-            <a href="#" class="btn btn-outline" style="width: 100%; font-size: 0.85rem; padding: 8px;" onclick="event.preventDefault(); alert('Brochure download initiated (mock placeholder file).');">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px; vertical-align: middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Download Product Brochure
-            </a>
+            <button id="product-brochure-download" class="btn btn-outline" style="width: 100%; font-size: 0.85rem; padding: 8px;" aria-label="Download product image">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px; vertical-align: middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Download Product Image
+            </button>
           </div>
         </div>
         
@@ -205,6 +206,16 @@ export class ProductModal {
           const idx = parseInt((e.target as HTMLElement).getAttribute('data-index') || '0', 10);
           updateImage(idx);
         });
+      });
+    }
+
+    // Wire download button – downloads the current visible product image
+    const downloadBtn = contentEl.querySelector('#product-brochure-download');
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', () => {
+        const imgSrc = p.images[this.currentImageIndex] || p.images[0];
+        const filename = deriveFilename(imgSrc, p.name.replace(/\s+/g, '_'));
+        downloadAsBlob(imgSrc, filename);
       });
     }
   }

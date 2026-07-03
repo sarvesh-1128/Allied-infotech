@@ -19,6 +19,7 @@ export default defineConfig({
         partners: resolve(__dirname, 'partners.html'),
         services: resolve(__dirname, 'services.html'),
         rfq: resolve(__dirname, 'rfq.html'),
+        team: resolve(__dirname, 'team.html'),
       },
       output: {
         manualChunks(id) {

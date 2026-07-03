@@ -386,6 +386,12 @@ header.header-shrink {
   position: relative;
   display: inline-block;
   letter-spacing: -0.5px;
+  transition: letter-spacing 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.section-header h2:hover {
+  letter-spacing: 0.5px;
+  color: var(--color-primary);
 }
 
 .section-header h2::after {
@@ -395,6 +401,11 @@ header.header-shrink {
   height: 3px;
   background-color: var(--color-primary);
   margin: var(--spacing-sm) auto 0;
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-header h2:hover::after {
+  width: 100px;
 }
 
 .section-header p {
@@ -402,20 +413,23 @@ header.header-shrink {
   font-size: 1.05rem;
 }
 
-/* Cards */
+/* Premium Engineering-Inspired Cards */
 .card {
-  background-color: var(--color-bg-main);
-  border: 1px solid var(--color-border);
+  background: linear-gradient(180deg, #F0F7FF 0%, #FFFFFF 100%);
+  border: 1px solid rgba(0, 89, 179, 0.15);
   border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--transition-medium), box-shadow var(--transition-medium), border-color var(--transition-medium);
+  box-shadow: 0 4px 20px rgba(0, 89, 179, 0.05);
+  transition: transform var(--transition-medium) cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow var(--transition-medium) cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color var(--transition-medium) cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-color: var(--color-primary-light);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 89, 179, 0.14);
+  border-color: rgba(0, 89, 179, 0.4);
 }
 
 /* Badges & Tags */
@@ -539,6 +553,180 @@ header.header-shrink {
 
 .modal-close-btn:hover {
   color: var(--color-secondary);
+}
+
+/* ============================================================
+   CERTIFICATE FULLSCREEN VIEWER – Premium UI
+   ============================================================ */
+
+/* The overlay is reused from .modal-overlay */
+.cert-viewer-overlay.active {
+  align-items: stretch;          /* let container fill height */
+}
+
+/* Main viewer container — fills most of the screen */
+.cert-viewer-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #0B1329;
+  width: 96vw;
+  max-width: 1200px;
+  height: 92vh;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  outline: none;
+  transform: scale(0.93);
+  transition: transform var(--transition-medium);
+}
+
+.modal-overlay.active .cert-viewer-container {
+  transform: scale(1);
+}
+
+/* Header bar */
+.cert-viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #0F1E3D;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  flex-shrink: 0;
+}
+
+.cert-viewer-header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #E2E8F0;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60%;
+}
+
+.cert-header-action {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #CBD5E1 !important;
+  font-size: 0.78rem !important;
+  transition: background-color var(--transition-fast), color var(--transition-fast) !important;
+}
+
+.cert-header-action:hover {
+  background-color: rgba(0, 89, 179, 0.3) !important;
+  color: white !important;
+  border-color: var(--color-primary) !important;
+}
+
+/* Close × button inside cert viewer */
+.cert-viewer-close {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+  margin-left: 6px;
+  transition: color var(--transition-fast);
+}
+
+.cert-viewer-close:hover {
+  color: white;
+}
+
+/* Toolbar */
+.cert-viewer-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 8px 16px;
+  background-color: #111827;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  flex-shrink: 0;
+}
+
+.cert-tool-btn {
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: rgba(255,255,255,0.06);
+  color: #CBD5E1;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  font-family: var(--font-family);
+}
+
+.cert-tool-btn:hover {
+  background-color: rgba(0, 89, 179, 0.4);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.cert-zoom-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #64748B;
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  min-width: 42px;
+  text-align: right;
+}
+
+/* Canvas (the panning + image area) */
+.cert-viewer-canvas {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background-color: #08101E;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* The certificate image itself – initial placement via JS transform */
+.cert-viewer-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 86%;
+  max-height: 86%;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  will-change: transform;
+  /* Base: centered via JS.  No CSS transform here to avoid conflict. */
+  transform-origin: center center;
+}
+
+/* Fullscreen API – when container goes native fullscreen */
+.cert-viewer-container:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  max-width: none;
+}
+
+/* Responsive: smaller devices */
+@media (max-width: 640px) {
+  .cert-viewer-container {
+    width: 100vw;
+    height: 100dvh;
+    border-radius: 0;
+  }
+  .cert-viewer-header h3 {
+    font-size: 0.85rem;
+  }
+  .cert-header-action {
+    display: none !important;   /* hide on very small screens, keep close btn */
+  }
 }
 
 /* Focus Outline overrides */
@@ -924,4 +1112,117 @@ footer {
   .hero-bg-video {
     display: none !important;
   }
+}
+
+/* ====================================================
+   PAGE TRANSITIONS & HEADER DROPDOWN STYLINGS
+   ==================================================== */
+
+/* Page Load Fade Transitions */
+html.js-active body {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+html.js-active body.page-loaded {
+  opacity: 1;
+}
+
+/* Header Navigation Dropdowns */
+.nav-item-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: var(--color-bg-main);
+  border: 1px solid rgba(0, 89, 179, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 89, 179, 0.08);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) 0;
+  list-style: none;
+  min-width: 220px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-fast) ease, transform var(--transition-fast) ease, visibility var(--transition-fast) ease;
+  z-index: 1000;
+}
+
+.dropdown-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 20px;
+  font-size: 0.88rem;
+  color: var(--color-text-main);
+  text-align: left;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.nav-caret {
+  display: inline-block;
+  font-size: 0.65rem;
+  margin-left: 4px;
+  transition: transform var(--transition-fast) ease;
+  vertical-align: middle;
+}
+
+.nav-item-dropdown:hover .nav-caret,
+.nav-item-dropdown:focus-within .nav-caret {
+  transform: rotate(180deg);
+}
+
+/* Mobile Dropdown Layouts */
+.mobile-dropdown-parent {
+  display: block;
+  width: 100%;
+}
+
+.mobile-dropdown-sublinks {
+  list-style: none;
+  padding-left: var(--spacing-md);
+  margin-top: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+  border-left: 2px solid var(--color-primary-light);
+}
+
+.mobile-dropdown-sublinks li a {
+  font-size: 0.9rem !important;
+  color: var(--color-text-muted) !important;
+  padding: 6px 0 !important;
+  display: block;
+}
+
+.mobile-dropdown-sublinks li a:hover {
+  color: var(--color-primary) !important;
+}
+
+/* Mouse spotlight overlay for heroes, page-heroes, CTAs */
+.hero-spotlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle 420px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 89, 179, 0.06), transparent 80%);
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.3s ease;
 }

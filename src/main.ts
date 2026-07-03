@@ -14,6 +14,9 @@ const header = new Header();
 const footer = new Footer();
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Trigger page load fade-in
+  document.body.classList.add('page-loaded');
+
   // Initialize Header and Footer dynamically
   header.init();
   footer.init();
@@ -38,6 +41,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize premium motion / micro-interaction UX system
   initPremiumUXEffects();
+
+  // Intercept all local links for smooth page transition fades
+  document.querySelectorAll('a').forEach(anchor => {
+    const href = anchor.getAttribute('href');
+    const target = anchor.getAttribute('target');
+    
+    if (href && !href.startsWith('#') && !target && !href.startsWith('tel:') && !href.startsWith('mailto:') && !href.startsWith('javascript:')) {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.body.classList.remove('page-loaded');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 220); // Syncs with CSS fade transition time
+      });
+    }
+  });
 });
 
 // ----------------------------------------------------
@@ -67,9 +86,9 @@ function initHomePage() {
   const industriesGrid = document.getElementById('industries-grid');
   if (industriesGrid) {
     industriesGrid.innerHTML = db.company.industries.map(ind => `
-      <div style="padding: var(--spacing-lg); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg-main); box-shadow: var(--shadow-sm); transition: transform var(--transition-fast);">
+      <div class="card tilt-card" style="padding: var(--spacing-lg);">
         <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--color-secondary); margin-bottom: var(--spacing-xs);">${ind.name}</h4>
-        <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5;">${ind.description}</p>
+        <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">${ind.description}</p>
       </div>
     `).join('');
   }
@@ -212,6 +231,22 @@ function initProductsPage() {
 
   let activeDivision = 'all';
   let searchQuery = '';
+
+  // Read URL query parameter for division filtering
+  const urlParams = new URLSearchParams(window.location.search);
+  const divisionParam = urlParams.get('division');
+  if (divisionParam && (divisionParam === 'manufacturing' || divisionParam === 'moulding')) {
+    activeDivision = divisionParam;
+    if (tabFilters) {
+      tabFilters.querySelectorAll('button').forEach(btn => {
+        if (btn.getAttribute('data-tab') === divisionParam) {
+          btn.className = 'btn btn-primary';
+        } else {
+          btn.className = 'btn btn-outline';
+        }
+      });
+    }
+  }
 
   const renderProducts = () => {
     // Filter logic
@@ -818,10 +853,29 @@ function initPremiumUXEffects() {
   if (isFinePointer) {
     initCursorSpotlightAndTilts();
     initMagneticButtons();
+    initHeroSpotlights();
   }
 
   initButtonRipples();
   initScrollProgressAndBackToTop();
+}
+
+function initHeroSpotlights() {
+  const heroes = document.querySelectorAll('.home-hero, .page-hero, .cta-section');
+  heroes.forEach(hero => {
+    (hero as HTMLElement).style.position = 'relative';
+    hero.classList.add('hero-spotlight');
+    
+    hero.addEventListener('mousemove', (e: Event) => {
+      const mouseEvent = e as MouseEvent;
+      const rect = hero.getBoundingClientRect();
+      const x = mouseEvent.clientX - rect.left;
+      const y = mouseEvent.clientY - rect.top;
+      
+      (hero as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
+      (hero as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
 }
 
 function initCursorSpotlightAndTilts() {

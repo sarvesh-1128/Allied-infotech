@@ -1,5 +1,6 @@
 // Dynamic Manufacturing Gallery Lightbox Component
 import { GalleryItem } from '../data/db.ts';
+import { downloadAsBlob, deriveFilename } from '../utils/download.ts';
 
 export class Lightbox {
   private overlay: HTMLElement | null = null;
@@ -155,7 +156,10 @@ export class Lightbox {
       
       <div style="width: 100%; text-align: center; color: white; padding: var(--spacing-md) 0 var(--spacing-sm); max-width: 600px;">
         <p style="font-size: 1rem; font-weight: 500; margin-bottom: 4px;">${item.caption}</p>
-        <span class="badge" style="background-color: var(--color-primary); color: white; font-size: 0.65rem;">${item.category.toUpperCase()} (${this.currentIndex + 1} / ${this.currentItems.length})</span>
+        <div style="display: flex; align-items: center; justify-content: center; gap: var(--spacing-md); flex-wrap: wrap;">
+          <span class="badge" style="background-color: var(--color-primary); color: white; font-size: 0.65rem;">${item.category.toUpperCase()} (${this.currentIndex + 1} / ${this.currentItems.length})</span>
+          <button id="lightbox-download-btn" class="btn" style="padding: 4px 14px; font-size: 0.75rem; background: rgba(255,255,255,0.12); color: white; border: 1px solid rgba(255,255,255,0.25); border-radius: var(--radius-sm); cursor: pointer; backdrop-filter: blur(4px);" aria-label="Download image">📥 Download</button>
+        </div>
       </div>
     `;
 
@@ -164,5 +168,11 @@ export class Lightbox {
       contentEl.querySelector('#lightbox-prev')?.addEventListener('click', () => this.prev());
       contentEl.querySelector('#lightbox-next')?.addEventListener('click', () => this.next());
     }
+
+    // Download button
+    contentEl.querySelector('#lightbox-download-btn')?.addEventListener('click', () => {
+      const filename = deriveFilename(item.src, item.caption.replace(/\s+/g, '_') || 'gallery_image');
+      downloadAsBlob(item.src, filename);
+    });
   }
 }

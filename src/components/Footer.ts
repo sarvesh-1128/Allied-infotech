@@ -18,7 +18,7 @@ export class Footer {
           <div class="footer-col">
             <h4>Quick Links</h4>
             <ul class="footer-links">
-              <li><a href="index.html">Corporate Profile</a></li>
+              <li><a href="index.html">Home</a></li>
               <li><a href="products.html">Product Portfolio</a></li>
               <li><a href="partners.html">Technical Partners</a></li>
               <li><a href="services.html">IT & Consultancies</a></li>
