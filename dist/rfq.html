@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request Quote & Contact Chennai Office | Allied-Iconic & Allied Infotech</title>
+  <meta name="description" content="Configure machinery, mould clamping blocks, descaling setups using our interactive RFQ builder, or get in touch with our Chennai service desk." />
+  
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" />
+  
+  <!-- Structured Breadcrumbs Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://allied-iconic.com/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "RFQ & Contact",
+        "item": "https://allied-iconic.com/rfq.html"
+      }]
+    }
+  </script>
+  
+  <style>
+    /* Contact page specific styling */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: var(--spacing-xxl);
+      align-items: start;
+    }
+    .contact-card-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-md);
+    }
+    .quick-actions-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-sm);
+      margin-top: var(--spacing-md);
+    }
+    .map-container {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: var(--spacing-md);
+    }
+    .map-iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      display: block;
+    }
+    
+    @media (max-width: 1024px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+      }
+    }
+    @media (max-width: 640px) {
+      .contact-card-box {
+        grid-template-columns: 1fr;
+      }
+      .quick-actions-bar {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/vendor-Bshph1IG.js"></script>
+  <script type="module" crossorigin src="/assets/echarts-DT9wy0AU.js"></script>
+  <script type="module" crossorigin src="/assets/main-DgdIAZGD.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-Cfdf33Ee.css">
+</head>
+<body>
+
+  <!-- Dynamic Header injection target -->
+  <header></header>
+
+  <!-- Page Hero Banner -->
+  <section class="page-hero" style="background-color: var(--color-bg-dark); color: white; padding: 80px 0 60px;">
+    <div class="container page-hero-container">
+      <span class="badge badge-primary" style="margin-bottom: var(--spacing-sm);">Connect With Us</span>
+      <h1 style="font-size: 2.75rem; font-weight: 800; line-height: 1.2;">RFQ & Corporate Contact</h1>
+      <p style="font-size: 1.1rem; color: #94a3b8; max-width: 700px; margin-top: var(--spacing-sm);">
+        Configure machinery parameters using our interactive checklist, or send an enquiry directly to our Chennai sales and engineering team.
+      </p>
+    </div>
+  </section>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <div class="container">
+      <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumbs-item breadcrumbs-item-active">RFQ & Contact</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Section 1: RFQ Wizard at the Top (Full Width Container) -->
+  <section class="section-padding container">
+    <div style="text-align: center; max-width: 800px; margin: 0 auto var(--spacing-xl);">
+      <h2 style="font-size: 2rem; font-weight: 800; color: var(--color-secondary); margin-bottom: var(--spacing-xs);">Interactive RFQ Configuration Checklist</h2>
+      <p style="color: var(--color-text-muted);">
+        Select your required moulding parameters, clamping forces, polymer types, and logistics preferences below to automatically compile an enquiry summary.
+      </p>
+    </div>
+    
+    <div class="card" style="max-width: 960px; margin: 0 auto; box-shadow: var(--shadow-md); padding: var(--spacing-xl);">
+      <!-- RFQ Wizard Container Injection Target -->
+      <div id="rfq-wizard-container"></div>
+    </div>
+  </section>
+
+  <!-- Section 2: Contact Form + Maps + Cards at the Bottom -->
+  <section id="contact" class="section-padding bg-alt">
+    <div class="container">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto var(--spacing-xl);">
+        <h2 style="font-size: 2rem; font-weight: 800; color: var(--color-secondary); margin-bottom: var(--spacing-xs);">General Business Enquiries</h2>
+        <p style="color: var(--color-text-muted);">
+          Have a custom technical query? Write to our Chennai office or call our service desk.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Left Column: Premium Contact Form -->
+        <div class="card" style="box-shadow: var(--shadow-md); padding: var(--spacing-xl); background: var(--color-bg-main);">
+          <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--color-secondary); margin-bottom: var(--spacing-md); border-bottom: 1px solid var(--color-border); padding-bottom: var(--spacing-xs);">Send a Message</h3>
+          
+          <form id="contact-form" novalidate>
+            <!-- Honeypot spam prevention field -->
+            <div style="display: none;">
+              <label for="contact-hp-field">Ignore this field</label>
+              <input type="text" id="contact-hp-field" name="hp_field" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Full Name *</label>
+              <input type="text" id="contact-name" class="form-control" placeholder="Your Name" required />
+              <div class="invalid-feedback">Name is required.</div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-company">Company Name</label>
+              <input type="text" id="contact-company" class="form-control" placeholder="Your Organization" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-email">Business Email *</label>
+              <input type="email" id="contact-email" class="form-control" placeholder="name@company.com" required />
+              <div class="invalid-feedback">Valid business email is required.</div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-phone">Phone Number *</label>
+              <input type="tel" id="contact-phone" class="form-control" placeholder="+91 XXXXX XXXXX" required />
+              <div class="invalid-feedback">Valid phone number is required.</div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-subject">Subject *</label>
+              <input type="text" id="contact-subject" class="form-control" placeholder="Technical Enquiry / Service Request" required />
+              <div class="invalid-feedback">Subject is required.</div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-message">Enquiry Details *</label>
+              <textarea id="contact-message" class="form-control" rows="5" placeholder="Describe your required mould parameters, tonnage requirements, or service timeline..." required></textarea>
+              <div class="invalid-feedback">Enquiry details are required.</div>
+            </div>
+
+            <button type="submit" id="contact-submit-btn" class="btn btn-primary" style="width: 100%; padding: 12px; margin-top: var(--spacing-sm); font-size: 1rem; font-weight: 600;">
+              Send Message
+            </button>
+          </form>
+
+          <div id="contact-status-log" style="font-size: 0.9rem; margin-top: 15px; display: none; padding: 12px; border-radius: var(--radius-sm); border: 1px solid transparent; font-weight: 500;"></div>
+        </div>
+
+        <!-- Right Column: Maps + Contact Cards -->
+        <div>
+          <!-- Google Maps Iframe Card -->
+          <div class="map-container">
+            <iframe 
+              class="map-iframe"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.136512680261!2d80.1476!3d13.0956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52627a1aaaaaaa%3A0xaaaaaaaaaaaaaaaa!2sAthipet%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div style="padding: var(--spacing-md); background-color: var(--color-bg-main); border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.85rem; color: var(--color-text-muted); font-weight: 600;">Athipet Operations, Chennai</span>
+              <a href="https://maps.google.com/?q=13.0956,80.1476" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: var(--spacing-xs);">
+                🗺️ Get Directions
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Details Cards Grid -->
+          <div class="contact-card-box">
+            <!-- Office Address Card -->
+            <div class="card" style="padding: var(--spacing-md); background: var(--color-bg-main);">
+              <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--color-secondary); margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">📍 Registered Address</h4>
+              <p style="font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.5;">
+                No.26, Venkateshwara Street, Chelliamman Nagar, Athipet, Chennai - 600058, India
+              </p>
+            </div>
+
+            <!-- Email Card -->
+            <div class="card" style="padding: var(--spacing-md); background: var(--color-bg-main);">
+              <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--color-secondary); margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">✉️ Email Desk</h4>
+              <p style="font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.5;">
+                <a href="mailto:info@allied-iconic.com" style="color: var(--color-primary); font-weight: 600;">info@allied-iconic.com</a><br>
+                Response in 24 business hours.
+              </p>
+            </div>
+
+            <!-- Phone Card -->
+            <div class="card" style="padding: var(--spacing-md); background: var(--color-bg-main);">
+              <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--color-secondary); margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">📞 Phone Support</h4>
+              <p style="font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.5; font-weight: 600; color: var(--color-text-main);">
+                +91 8144723651
+              </p>
+            </div>
+
+            <!-- Hours Card -->
+            <div class="card" style="padding: var(--spacing-md); background: var(--color-bg-main);">
+              <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--color-secondary); margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">⏰ Business Hours</h4>
+              <p style="font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.5;">
+                Monday - Saturday:<br>
+                09:00 AM - 06:00 PM IST
+              </p>
+            </div>
+          </div>
+
+          <!-- Quick Contact Actions Bar -->
+          <div class="quick-actions-bar">
+            <a href="tel:+918144723651" class="btn btn-primary" style="text-align: center; padding: 10px; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 6px;">
+              📞 Call Service Desk
+            </a>
+            <a href="mailto:info@allied-iconic.com?subject=Technical%20Enquiry" class="btn btn-outline" style="text-align: center; padding: 10px; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 6px; border-color: var(--color-primary); color: var(--color-primary);">
+              ✉️ Email Direct
+            </a>
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="btn btn-outline" style="text-align: center; padding: 10px; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 6px; border-color: var(--color-secondary); color: var(--color-secondary);">
+              📋 Request Quote
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Footer injection target -->
+  <footer></footer>
+
+  <!-- Main script bundle -->
+</body>
+</html>

@@ -1,0 +1,26 @@
+[2026-07-03T08:09:22.497Z] [WARN] SMTP Credentials missing or incomplete. Email routing will operate in Simulated local logs mode.
+[2026-07-03T08:09:22.504Z] [INFO] Corporate Express server started successfully. Listening on port: 3000
+[2026-07-03T08:12:46.929Z] [INFO] Received request: POST /api/contact from IP: ::1
+[2026-07-03T08:12:46.939Z] [INFO] Running request validation checks on incoming post payload
+[2026-07-03T08:12:46.968Z] [INFO] Formatting and sending contact email for: Test aTest Name (t)
+[2026-07-03T08:12:46.969Z] [INFO] [SIMULATION LOG] Email Dispatched to local console (SMTP Server offline):
+      -----------------------------------------
+      From: "Allied Web Desk" <enquiries@allied-iconic.com>
+      To: info@allied-iconic.com
+      Subject: [Web Enquiry] Test Subject - Test aTest Name
+      -----------------------------------------
+[2026-07-03T08:12:47.473Z] [INFO] Contact form email successfully dispatched | Meta: {"messageId":"mock-message-id-867971"}
+[2026-07-03T09:21:42.210Z] [WARN] SMTP Credentials missing or incomplete. Email routing will operate in Simulated local logs mode.
+[2026-07-03T09:21:42.221Z] [INFO] Corporate Express server started successfully. Listening on port: 3000
+[2026-07-03T09:24:05.970Z] [INFO] Received request: POST /api/contact from IP: ::1
+[2026-07-03T09:24:05.978Z] [INFO] Running request validation checks on incoming post payload
+[2026-07-03T09:24:06.010Z] [INFO] Formatting and sending contact email for: Test_mail (Test_Cmpy)
+[2026-07-03T09:24:06.012Z] [INFO] [SIMULATION LOG] Email Dispatched to local console (SMTP Server offline):
+      -----------------------------------------
+      From: "Allied Web Desk" <enquiries@allied-iconic.com>
+      To: info@allied-iconic.com
+      Subject: [Web Enquiry] Enquiry about: Magnetic Quick Mold Change (QMC) System - Test_mail
+      -----------------------------------------
+[2026-07-03T09:24:06.515Z] [INFO] Contact form email successfully dispatched | Meta: {"messageId":"mock-message-id-91572"}
+[2026-07-03T09:40:35.757Z] [WARN] SMTP Credentials missing or incomplete. Email routing will operate in Simulated local logs mode.
+[2026-07-03T09:40:35.767Z] [INFO] Corporate Express server started successfully. Listening on port: 3000

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineering, Manufacturing & Technology Solutions | Allied-Iconic & Allied Infotech</title>
+  <meta name="description" content="Corporate services hub spanning IT/ITES integrations, high-performance manufacturing quick mold change systems, and customized industrial moulding solutions." />
+  
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" />
+  <link rel="stylesheet" href="/src/index.css" />
+  
+  <!-- Structured Breadcrumbs Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://allied-iconic.com/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://allied-iconic.com/services.html"
+      }]
+    }
+  </script>
+  
+  <style>
+    /* Page Specific Styles for Services Landing Page */
+    .services-nav-sticky {
+      position: sticky;
+      top: 70px;
+      z-index: 100;
+      background: rgba(11, 19, 41, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: var(--spacing-sm) 0;
+      box-shadow: var(--shadow-md);
+      transition: top 0.3s ease;
+    }
+    .header-shrink ~ .services-nav-sticky {
+      top: 60px;
+    }
+    .services-nav-list {
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing-lg);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .services-nav-link {
+      color: #94A3B8;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 8px 16px;
+      position: relative;
+      transition: color var(--transition-fast);
+    }
+    .services-nav-link:hover {
+      color: white;
+    }
+    .services-nav-link.active {
+      color: var(--color-primary-light);
+    }
+    .services-nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 16px;
+      right: 16px;
+      height: 3px;
+      background-color: var(--color-primary-light);
+      border-radius: 2px;
+      animation: navUnderlineReveal 0.25s forwards ease;
+    }
+    @keyframes navUnderlineReveal {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+    
+    .hub-card {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-medium);
+    }
+    .hub-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--color-primary-light);
+      box-shadow: var(--shadow-lg);
+    }
+    .hub-card-img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-medium);
+    }
+    .hub-card:hover .hub-card-img {
+      transform: scale(1.04);
+    }
+    .hub-card-body {
+      padding: var(--spacing-lg);
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+    
+    .service-detail-section {
+      padding: 100px 0 var(--spacing-xxl);
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+    }
+    @media (max-width: 1024px) {
+      .detail-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 640px) {
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+      .services-nav-list {
+        gap: var(--spacing-sm);
+      }
+      .services-nav-link {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dynamic Header injection target -->
+  <header></header>
+
+  <!-- Page Hero Banner -->
+  <section class="page-hero" style="background-color: var(--color-bg-dark); color: white; padding: 80px 0 60px;">
+    <div class="container page-hero-container">
+      <span class="badge badge-primary" style="margin-bottom: var(--spacing-sm);">Capabilities & Verticals</span>
+      <h1 style="font-size: 2.75rem; font-weight: 800; line-height: 1.2;">Engineering, Manufacturing & Technology Solutions</h1>
+      <p style="font-size: 1.1rem; color: #94a3b8; max-width: 700px; margin-top: var(--spacing-sm);">
+        Allied-Iconic Pvt. Ltd. and its division Allied Infotech offer three primary business divisions designed to streamline and automate high-efficiency industrial factories.
+      </p>
+    </div>
+  </section>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <div class="container">
+      <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumbs-item breadcrumbs-item-active">Our Services</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Three-Vertical Service Hub Grid Section -->
+  <section class="section-padding container">
+    <div style="text-align: center; margin-bottom: var(--spacing-xl);">
+      <h2 style="font-size: 2rem; font-weight: 800; color: var(--color-secondary); margin-bottom: var(--spacing-xs);">Choose Business Vertical</h2>
+      <p style="color: var(--color-text-muted);">Explore our distinct areas of competence to view technical details, product lists, or request a quote.</p>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg);">
+      <!-- Card 1: IT / ITES -->
+      <div class="hub-card" id="hub-card-it">
+        <div style="overflow: hidden; position: relative;">
+          <img src="" class="hub-card-img" id="hub-img-it" alt="IT / ITES ERP Systems" />
+          <div style="position: absolute; top: var(--spacing-sm); right: var(--spacing-sm); background: rgba(0, 89, 179, 0.9); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 700; color: white;">DIVISION 01</div>
+        </div>
+        <div class="hub-card-body">
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-secondary); margin-bottom: var(--spacing-xs);">IT / ITES Integration</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: var(--spacing-md);">
+              SAP S/4HANA migrations, custom ERP implementation, and material tracking API interfaces connecting shop-floor machines with suppliers.
+            </p>
+          </div>
+          <button class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-sm); padding: 8px 16px; font-size: 0.88rem;">Explore IT Services</button>
+        </div>
+      </div>
+      
+      <!-- Card 2: Manufacturing -->
+      <div class="hub-card" id="hub-card-mfg">
+        <div style="overflow: hidden; position: relative;">
+          <img src="" class="hub-card-img" id="hub-img-mfg" alt="Manufacturing QMC Machinery" />
+          <div style="position: absolute; top: var(--spacing-sm); right: var(--spacing-sm); background: rgba(0, 89, 179, 0.9); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 700; color: white;">DIVISION 02</div>
+        </div>
+        <div class="hub-card-body">
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-secondary); margin-bottom: var(--spacing-xs);">Manufacturing & Machinery</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: var(--spacing-md);">
+              Representing premier machinery principals: Ningbo Konger IMMs, Kunshan Shangzhiyou QMC clamps, wear-resistant screw barrels, and descaling systems.
+            </p>
+          </div>
+          <button class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-sm); padding: 8px 16px; font-size: 0.88rem;">View Product Verticals</button>
+        </div>
+      </div>
+      
+      <!-- Card 3: Moulding -->
+      <div class="hub-card" id="hub-card-mld">
+        <div style="overflow: hidden; position: relative;">
+          <img src="" class="hub-card-img" id="hub-img-mld" alt="Tooling Injection Moulding" />
+          <div style="position: absolute; top: var(--spacing-sm); right: var(--spacing-sm); background: rgba(0, 89, 179, 0.9); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 700; color: white;">DIVISION 03</div>
+        </div>
+        <div class="hub-card-body">
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-secondary); margin-bottom: var(--spacing-xs);">Moulding & Tooling</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: var(--spacing-md);">
+              Precision multi-cavity injection moulding, turnkey mold design, and on-site tool commissioning across automotive, thin-wall food packaging, and logistics.
+            </p>
+          </div>
+          <button class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-sm); padding: 8px 16px; font-size: 0.88rem;">View Tooling Verticals</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Scroll Spy Navigation Bar -->
+  <nav class="services-nav-sticky">
+    <div class="container">
+      <ul class="services-nav-list">
+        <li><a href="#sec-it-ites" class="services-nav-link" id="nav-link-it">IT / ITES Services</a></li>
+        <li><a href="#sec-manufacturing" class="services-nav-link" id="nav-link-mfg">Manufacturing Portfolio</a></li>
+        <li><a href="#sec-moulding" class="services-nav-link" id="nav-link-mld">Moulding & Tooling</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Detail Sections Wrapper -->
+  <main class="container">
+    
+    <!-- Section 1: IT / ITES Details -->
+    <section id="sec-it-ites" class="service-detail-section">
+      <div style="border-bottom: 2px solid var(--color-border); padding-bottom: var(--spacing-sm); margin-bottom: var(--spacing-lg);">
+        <span class="badge badge-primary">Division 01</span>
+        <h2 style="font-size: 2.25rem; font-weight: 800; color: var(--color-secondary); margin-top: var(--spacing-xs);">IT / ITES & Consultancy Services</h2>
+        <p style="color: var(--color-text-muted); font-size: 1.05rem; margin-top: var(--spacing-xs);">ERP implementation, custom supplier integrations, QMS certifications, and environmental loop audits.</p>
+      </div>
+      
+      <div class="detail-grid" id="it-services-grid"></div>
+    </section>
+
+    <!-- Section 2: Manufacturing Details -->
+    <section id="sec-manufacturing" class="service-detail-section">
+      <div style="border-bottom: 2px solid var(--color-border); padding-bottom: var(--spacing-sm); margin-bottom: var(--spacing-lg);">
+        <span class="badge badge-primary">Division 02</span>
+        <h2 style="font-size: 2.25rem; font-weight: 800; color: var(--color-secondary); margin-top: var(--spacing-xs);">Manufacturing & Machinery Verticals</h2>
+        <p style="color: var(--color-text-muted); font-size: 1.05rem; margin-top: var(--spacing-xs);">Global representation, sales, and Chennai service center distributions for IMM machinery and clamping blocks.</p>
+      </div>
+      
+      <div class="detail-grid" id="mfg-services-grid"></div>
+    </section>
+
+    <!-- Section 3: Moulding Details -->
+    <section id="sec-moulding" class="service-detail-section" style="border-bottom: none; margin-bottom: 80px;">
+      <div style="border-bottom: 2px solid var(--color-border); padding-bottom: var(--spacing-sm); margin-bottom: var(--spacing-lg);">
+        <span class="badge badge-primary">Division 03</span>
+        <h2 style="font-size: 2.25rem; font-weight: 800; color: var(--color-secondary); margin-top: var(--spacing-xs);">Moulding & Tooling Solutions</h2>
+        <p style="color: var(--color-text-muted); font-size: 1.05rem; margin-top: var(--spacing-xs);">Turnkey engineering mould supply, CNC trials, DFM reporting, and structural mold commissions.</p>
+      </div>
+      
+      <div class="detail-grid" id="mld-services-grid"></div>
+    </section>
+    
+  </main>
+
+  <!-- Dynamic Product Detail Slider Modal target -->
+  <div id="product-detail-modal-container"></div>
+
+  <!-- Dynamic Footer injection target -->
+  <footer></footer>
+
+  <!-- Main script bundle -->
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
