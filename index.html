@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Allied Infotech | Injection Moulding Solutions</title>
+  <meta name="description" content="Allied Infotech is a technology-driven company offering injection moulding machines, moulds, accessories, service, and industrial solutions across South India and PAN India." />
+  <style>
+    :root{
+      --primary:#0f172a;
+      --secondary:#1e293b;
+      --accent:#0ea5e9;
+      --accent-2:#22c55e;
+      --light:#f8fafc;
+      --muted:#64748b;
+      --white:#ffffff;
+      --border:#e2e8f0;
+      --card-shadow:0 10px 30px rgba(15, 23, 42, 0.08);
+      --max-width:1200px;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--primary);
+      background:var(--white);
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:min(92%, var(--max-width));
+      margin:0 auto;
+    }
+
+    .topbar{
+      background:var(--primary);
+      color:var(--white);
+      font-size:14px;
+      padding:10px 0;
+    }
+
+    .topbar .container{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .topbar a{
+      color:#cbd5e1;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,0.96);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--border);
+    }
+
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+      gap:20px;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:800;
+      color:var(--primary);
+      letter-spacing:0.5px;
+    }
+
+    .logo span{
+      color:var(--accent);
+    }
+
+    .nav-links{
+      display:flex;
+      gap:22px;
+      list-style:none;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      font-weight:600;
+      color:var(--secondary);
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:var(--accent);
+    }
+
+    .btn{
+      display:inline-block;
+      padding:13px 22px;
+      border-radius:8px;
+      font-weight:700;
+      transition:0.3s ease;
+    }
+
+    .btn-primary{
+      background:var(--accent);
+      color:var(--white);
+    }
+
+    .btn-primary:hover{
+      background:#0284c7;
+    }
+
+    .btn-outline{
+      border:2px solid var(--white);
+      color:var(--white);
+    }
+
+    .btn-outline:hover{
+      background:var(--white);
+      color:var(--primary);
+    }
+
+    .hero{
+      background:
+        linear-gradient(rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.78)),
+        url('[images.unsplash.com](https://images.unsplash.com/photo-1565034946487-077786996e27?auto=format&fit=crop&w=1600&q=80)') center/cover no-repeat;
+      color:var(--white);
+      padding:100px 0 90px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .hero h1{
+      font-size:52px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:18px;
+      color:#e2e8f0;
+      margin-bottom:28px;
+      max-width:700px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.15);
+      border-radius:16px;
+      padding:28px;
+      box-shadow:var(--card-shadow);
+    }
+
+    .hero-card h3{
+      margin-bottom:16px;
+      font-size:24px;
+    }
+
+    .hero-card ul{
+      list-style:none;
+    }
+
+    .hero-card li{
+      padding:10px 0;
+      border-bottom:1px solid rgba(255,255,255,0.12);
+      color:#e2e8f0;
+    }
+
+    .hero-card li:last-child{
+      border-bottom:none;
+    }
+
+    section{
+      padding:80px 0;
+    }
+
+    .section-head{
+      text-align:center;
+      margin-bottom:44px;
+    }
+
+    .section-head h2{
+      font-size:38px;
+      margin-bottom:10px;
+      color:var(--primary);
+    }
+
+    .section-head p{
+      color:var(--muted);
+      max-width:760px;
+      margin:0 auto;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:34px;
+      align-items:start;
+    }
+
+    .card{
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:28px;
+      box-shadow:var(--card-shadow);
+    }
+
+    .card h3{
+      margin-bottom:14px;
+      font-size:24px;
+    }
+
+    .card p{
+      color:var(--secondary);
+      margin-bottom:12px;
+    }
+
+    .check-list{
+      list-style:none;
+      display:grid;
+      gap:12px;
+      margin-top:10px;
+    }
+
+    .check-list li{
+      background:var(--light);
+      border:1px solid var(--border);
+      padding:14px 16px;
+      border-radius:10px;
+    }
+
+    .stats{
+      background:var(--light);
+    }
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:20px;
+    }
+
+    .stat-box{
+      background:var(--white);
+      border-radius:16px;
+      padding:26px;
+      text-align:center;
+      box-shadow:var(--card-shadow);
+      border:1px solid var(--border);
+    }
+
+    .stat-box h3{
+      font-size:34px;
+      color:var(--accent);
+      margin-bottom:8px;
+    }
+
+    .stat-box p{
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:22px;
+    }
+
+    .service-card{
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:26px;
+      box-shadow:var(--card-shadow);
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 16px 36px rgba(15, 23, 42, 0.12);
+    }
+
+    .service-card .num{
+      font-size:14px;
+      font-weight:800;
+      color:var(--accent);
+      margin-bottom:10px;
+      letter-spacing:1px;
+    }
+
+    .service-card h3{
+      font-size:22px;
+      margin-bottom:12px;
+    }
+
+    .service-card p{
+      color:var(--muted);
+    }
+
+    .partners{
+      background:var(--light);
+    }
+
+    .partner-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:22px;
+    }
+
+    .partner-card{
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:24px;
+      box-shadow:var(--card-shadow);
+    }
+
+    .partner-card h3{
+      margin-bottom:8px;
+      font-size:20px;
+    }
+
+    .partner-card p{
+      color:var(--muted);
+    }
+
+    .table-wrap{
+      overflow-x:auto;
+      border-radius:16px;
+      box-shadow:var(--card-shadow);
+      border:1px solid var(--border);
+      background:var(--white);
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:900px;
+    }
+
+    thead{
+      background:var(--primary);
+      color:var(--white);
+    }
+
+    th, td{
+      padding:16px 18px;
+      border-bottom:1px solid var(--border);
+      text-align:left;
+      font-size:15px;
+    }
+
+    tbody tr:hover{
+      background:#f8fbff;
+    }
+
+    .note{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .strength-grid,
+    .team-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:20px;
+    }
+
+    .strength-item,
+    .team-card{
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:20px;
+      box-shadow:var(--card-shadow);
+    }
+
+    .strength-item h3,
+    .team-card h3{
+      font-size:20px;
+      margin-bottom:8px;
+    }
+
+    .strength-item p,
+    .team-card p{
+      color:var(--muted);
+    }
+
+    .cta{
+      background:linear-gradient(135deg, var(--primary), var(--secondary));
+      color:var(--white);
+      text-align:center;
+      padding:70px 0;
+    }
+
+    .cta h2{
+      font-size:38px;
+      margin-bottom:14px;
+    }
+
+    .cta p{
+      color:#cbd5e1;
+      max-width:760px;
+      margin:0 auto 24px;
+    }
+
+    footer{
+      background:#020617;
+      color:#cbd5e1;
+      padding:50px 0 26px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr 1fr 1fr;
+      gap:30px;
+      margin-bottom:30px;
+    }
+
+    footer h3, footer h4{
+      color:var(--white);
+      margin-bottom:14px;
+    }
+
+    footer p, footer li, footer a{
+      color:#cbd5e1;
+      font-size:15px;
+    }
+
+    footer ul{
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding-top:18px;
+      text-align:center;
+      font-size:14px;
+      color:#94a3b8;
+    }
+
+    @media (max-width: 992px){
+      .hero-grid,
+      .about-grid,
+      .stats-grid,
+      .services-grid,
+      .partner-grid,
+      .strength-grid,
+      .team-grid,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:40px;
+      }
+
+      .navbar{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .nav-links{
+        gap:14px;
+      }
+    }
+
+    @media (max-width: 600px){
+      .hero{
+        padding:80px 0 70px;
+      }
+
+      .hero h1{
+        font-size:32px;
+      }
+
+      .section-head h2{
+        font-size:30px;
+      }
+
+      .btn{
+        width:100%;
+        text-align:center;
+      }
+
+      .hero-buttons{
+        flex-direction:column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <div>Email: alliedinfotech@gmail.com | npd.dir@outlook.com</div>
+      <div>Call: +91 8144723651 | +91 9600097683</div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo">Allied<span> Infotech</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Products</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#performance">Performance</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Advanced Injection Moulding Solutions for Modern Manufacturing</h1>
+        <p>
+          Allied Infotech is a technology-driven company offering injection moulding machines,
+          moulds, accessories, service support, and industrial solutions across South India and PAN India.
+          Built on decades of engineering, sales, and market expertise, we help manufacturers scale with confidence.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Get in Touch</a>
+          <a href="#services" class="btn btn-outline">Explore Products</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Why Allied Infotech</h3>
+        <ul>
+          <li>30+ years of combined industry experience in engineering-led sales and marketing</li>
+          <li>Strong presence in plastic, tooling, die making, and industrial manufacturing sectors</li>
+          <li>South India market expertise with expanding PAN India support</li>
+          <li>Design, supply, and service support for moulding systems and accessories</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <h2>About Allied Infotech</h2>
+        <p>
+          Allied Infotech is founded by engineering professionals with deep experience in sales, marketing,
+          mobility, oil and lubricants, industrial consumables, and injection moulding technologies.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="card">
+          <h3>Company Overview</h3>
+          <p>
+            Established in <strong>2017</strong>, Allied Infotech represents leading global manufacturers
+            of injection moulding machines and industrial components in India.
+          </p>
+          <p>
+            We operate with a skilled workforce and service-oriented approach to ensure seamless support
+            for customers in production, maintenance, and moulding technology adoption.
+          </p>
+          <p>
+            Our market reach spans major cities across South India, with the ability to support nationwide business development.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Key Focus Areas</h3>
+          <ul class="check-list">
+            <li>Injection moulding machines and processing support</li>
+            <li>Mould design, supply, and service for crates, furniture, pallets, PET preforms, caps and closures, thin wall, auto, and medical applications</li>
+            <li>Industrial accessories including clamps, cooling systems, cleaning equipment, MTC, HRC, screw and barrel systems</li>
+            <li>Customer support, technical service, and troubleshooting assistance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-box">
+          <h3>2017</h3>
+          <p>Year Established</p>
+        </div>
+        <div class="stat-box">
+          <h3>30+</h3>
+          <p>Years of Leadership Experience</p>
+        </div>
+        <div class="stat-box">
+          <h3>₹1000M</h3>
+          <p>FY 23-24 Marketed Value</p>
+        </div>
+        <div class="stat-box">
+          <h3>₹1250M</h3>
+          <p>FY 24-25 Target</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>Products and Services</h2>
+        <p>
+          We currently market a range of machinery, moulding accessories, support systems,
+          and value-added services for the Indian manufacturing industry.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="num">01</div>
+          <h3>Injection Moulding Machines</h3>
+          <p>High-performance systems for industrial plastic processing and production efficiency.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="num">02</div>
+          <h3>Mould Clamps</h3>
+          <p>Hydraulic, magnetic, and toggle clamp systems for faster and safer mould handling.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="num">03</div>
+          <h3>Cooling Channels and QCC / SMED</h3>
+          <p>Solutions that support reduced cycle time, faster changeovers, and better process control.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="num">04</div>
+          <h3>Mould Cleaning Equipment</h3>
+          <p>Surface and cooling line cleaning systems to improve tool life and maintain production quality.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="num">05</div>
+          <h3>Metal Separators</h3>
+          <p>Equipment to protect machines and improve product quality by removing metal contamination.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="num">06</div>
+          <h3>Screw, Barrel and Shut-Off Nozzles</h3>
+          <p>Reliable machine components designed for process consistency and long service life.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="num">07</div>
+          <h3>MTC and HRC</h3>
+          <p>Temperature control and process support systems for stable moulding performance.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="num">08</div>
+          <h3>Mould Tie-Up</h3>
+          <p>Integrated support for sourcing, supply, and coordination of mould-related solutions.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="num">09</div>
+          <h3>Support and Troubleshooting</h3>
+          <p>Advisory and troubleshooting assistance for injection moulding machines and accessories.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="partners" class="partners">
+    <div class="container">
+      <div class="section-head">
+        <h2>Current Business Partners</h2>
+        <p>
+          We work with global and regional manufacturing partners to deliver reliable industrial solutions to the Indian market.
+        </p>
+      </div>
+
+      <div class="partner-grid">
+        <div class="partner-card">
+          <h3>Yizumi Precision Machinery India Pvt Ltd</h3>
+          <p>Global company and group company of HPM-USA.</p>
+          <p><strong>Product:</strong> Injection Moulding Machines</p>
+        </div>
+
+        <div class="partner-card">
+          <h3>MCB Molds - China</h3>
+          <p><strong>Product:</strong> Furniture and Crate Moulds</p>
+        </div>
+
+        <div class="partner-card">
+          <h3>HK HENG FEI BIOLOGICAL TECH. Co., Ltd</h3>
+          <p><strong>Product:</strong> Mould Cleaning Equipment</p>
+        </div>
+
+        <div class="partner-card">
+          <h3>Kunshan Shangzhiyou Precision Machinery Co., Ltd</h3>
+          <p><strong>Product:</strong> Hydraulic, Magnetic, and Toggle Mould Clampers</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="performance">
+    <div class="container">
+      <div class="section-head">
+        <h2>Order Book Value Trend</h2>
+        <p>
+          The performance below is adapted from your provided business profile and presented in a cleaner web format.
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Principal / Segment</th>
+              <th>FY 21-22</th>
+              <th>FY 22-23</th>
+              <th>FY 23-24</th>
+              <th>FY 24-25</th>
+              <th>FY 25-26</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Yizumi Precision Machinery India Pvt Ltd - Sales through us</td>
+              <td>320.00</td>
+              <td>680.00</td>
+              <td>885.00</td>
+              <td>1100.00</td>
+              <td>1265.00</td>
+            </tr>
+            <tr>
+              <td>MCB Crates and Moulds</td>
+              <td>5.50</td>
+              <td>15.00</td>
+              <td>27.50</td>
+              <td>30.00</td>
+              <td>34.50</td>
+            </tr>
+            <tr>
+              <td>Karamsar Technologies</td>
+              <td>200.00</td>
+              <td>60.00</td>
+              <td>87.50</td>
+              <td>120.00</td>
+              <td>138.00</td>
+            </tr>
+            <tr>
+              <td>Others</td>
+              <td>3.00</td>
+              <td>0.55</td>
+              <td>75.00</td>
+              <td>15.00</td>
+              <td>17.25</td>
+            </tr>
+            <tr>
+              <td><strong>Total Order Book Value</strong></td>
+              <td><strong>528.50</strong></td>
+              <td><strong>755.55</strong></td>
+              <td><strong>1075.00</strong></td>
+              <td><strong>1265.00</strong></td>
+              <td><strong>1454.75</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="note">
+        Note: Yizumi figures are for Tamil Nadu state alone. Remaining values represent the total South India market.
+        FY 24-25 and FY 25-26 figures are forecast planning values.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>Our Core Strength</h2>
+        <p>
+          Allied Infotech combines engineering knowledge, market reach, and customer relationships to deliver dependable industrial support.
+        </p>
+      </div>
+
+      <div class="strength-grid">
+        <div class="strength-item">
+          <h3>Engineering-Led Team</h3>
+          <p>Our team includes qualified professionals with strong technical and commercial backgrounds.</p>
+        </div>
+
+        <div class="strength-item">
+          <h3>Decades of Market Experience</h3>
+          <p>The managing partners bring more than three decades of institutional marketing and sales experience.</p>
+        </div>
+
+        <div class="strength-item">
+          <h3>Strong Industrial Customer Base</h3>
+          <p>We serve plastic processors, mould makers, tool and die makers, machine shops, sheet metal businesses, and manufacturing companies.</p>
+        </div>
+
+        <div class="strength-item">
+          <h3>Strategic Chennai Presence</h3>
+          <p>Our established office in Chennai supports sales and service needs across South India.</p>
+        </div>
+
+        <div class="strength-item">
+          <h3>Regional Market Coverage</h3>
+          <p>We currently cater to the complete South India market for selected products and solutions.</p>
+        </div>
+
+        <div class="strength-item">
+          <h3>Long-Term Principal Relationships</h3>
+          <p>We maintain durable partnerships with multinational and global manufacturing principals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="stats">
+    <div class="container">
+      <div class="section-head">
+        <h2>Leadership and Team</h2>
+        <p>
+          A technically grounded team with expertise in engineering, service, business development, and industrial sales.
+        </p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <h3>K. V. Muthu Krishnan</h3>
+          <p><strong>Experience:</strong> 30 Years</p>
+          <p><strong>Qualification:</strong> A.M.I.E, M.B.A., P.G.D.M.M</p>
+        </div>
+
+        <div class="team-card">
+          <h3>K. M. R. Vijaya Murthy</h3>
+          <p><strong>Experience:</strong> 30 Years</p>
+          <p><strong>Qualification:</strong> B.E., M.B.A., P.G.D.I.B</p>
+        </div>
+
+        <div class="team-card">
+          <h3>Sales and Service Team</h3>
+          <p>
+            Supported by professionals with experience ranging from 1 to 30 years across business development,
+            service engineering, and industrial operations.
+          </p>
+        </div>
+
+        <div class="team-card">
+          <h3>Technical Support Capability</h3>
+          <p>
+            Our team brings qualifications including B.E., M.B.A., D.M.E., Diploma Engineering, and related technical expertise.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Driven by Technology. Focused on Service.</h2>
+      <p>
+        Allied Infotech supports industrial growth through reliable machinery, moulding solutions,
+        technical support, and strong regional market presence.
+      </p>
+      <a href="#contact" class="btn btn-primary">Contact Allied Infotech</a>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>Allied Infotech</h3>
+          <p>
+            Flat No 24, 1st Floor, Om Prakash Nagar,<br />
+            1st Cross Street, Natham, Kundrathur,<br />
+            Chennai - 600069, Tamil Nadu, India
+          </p>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Email: alliedinfotech@gmail.com</li>
+            <li>Email: npd.dir@outlook.com</li>
+            <li>Phone: +91 8144723651</li>
+            <li>Phone: +91 9600097683</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Business Focus</h4>
+          <ul>
+            <li>Injection Moulding Machines</li>
+            <li>Moulds and Accessories</li>
+            <li>Industrial Service Support</li>
+            <li>South India and PAN India Reach</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Use Plastics Properly - Promote Recycling - Protect the Environment</p>
+        <p>© 2026 Allied Infotech. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
